@@ -1,7 +1,26 @@
 syntax = 'proto3';
 
 service Evaluator {
-  rpc GetScores(stream Phrase) returns (stream Score);
+  rpc GetScores(GetScoresRequest) returns (GetScoresResponse);
+  rpc Heartbeat(HeartbeatRequest) returns (HeartbeatResponse);
+}
+
+message GetScoresRequest {
+  bool ok = 1;
+  optional string err_msg = 2;
+  repeated Phrase phrases = 3;
+}
+
+message GetScoresResponse {
+  repeated Score scores = 1;
+}
+
+message HeartbeatRequest {
+}
+
+message HeartbeatResponse {
+  uint32 tasks = 1;
+  uint32 free_vram = 2;
 }
 
 message Phrase {
