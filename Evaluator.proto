@@ -1,0 +1,15 @@
+syntax = 'proto3';
+
+service Evaluator {
+  rpc GetScores(stream Phrase) returns (stream Score);
+}
+
+message Phrase {
+  string content = 1;
+}
+
+message Score {
+  float positivity = 1;
+  float negativity = 2;
+  float neutrality = 3;
+}
