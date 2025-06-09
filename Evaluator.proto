@@ -6,13 +6,13 @@ service Evaluator {
 }
 
 message GetScoresRequest {
-  bool ok = 1;
-  optional string err_msg = 2;
-  repeated Phrase phrases = 3;
+  repeated Phrase phrases = 1;
 }
 
 message GetScoresResponse {
-  repeated Score scores = 1;
+  bool ok = 1;
+  optional string err_msg = 2;
+  repeated Score scores = 3;
 }
 
 message HeartbeatRequest {
