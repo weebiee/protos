@@ -21,6 +21,7 @@ message HeartbeatRequest {
 message HeartbeatResponse {
   uint32 tasks = 1;
   uint32 free_vram = 2;
+  uint32 total_vram = 3;
 }
 
 message Phrase {
