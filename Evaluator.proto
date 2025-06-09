@@ -6,7 +6,7 @@ service Evaluator {
 }
 
 message GetScoresRequest {
-  repeated Phrase phrases = 1;
+  repeated string phrases = 1;
 }
 
 message GetScoresResponse {
@@ -23,10 +23,6 @@ message HeartbeatResponse {
   uint32 free_vram = 2;
   uint32 total_vram = 3;
   string id = 4;
-}
-
-message Phrase {
-  string content = 1;
 }
 
 message Score {
